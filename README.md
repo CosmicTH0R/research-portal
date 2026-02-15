@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Research Portal - Financial Statement Extractor
 
-## Getting Started
+A minimal research portal that extracts structured financial data from unstructured documents (PDF/Text) using AI.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Document Ingestion**: Upload PDF Annual Reports or financial text files.
+-   **AI Extraction**: Uses Google Gemini 1.5 Flash (Multimodal) to identify and extract income statement line items directly from PDFs.
+-   **Structured Output**: Downloads extracted data as formatted Excel (.xlsx) files.
+-   **Clean UI**: Simple, analyst-focused interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone/Download** the repository.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+4.  **Open** [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+1.  Enter your **Gemini API Key** in the input field (keys are not stored, only used for the session).
+2.  **Upload** a financial document (e.g., Annual Report PDF).
+3.  Click **Extract Financial Data**.
+4.  Review the extracted table and click **Download Excel** to save the analysis.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   **Frontend**: Next.js 14, React, Tailwind CSS
+-   **Backend**: Next.js API Routes
+-   **AI**: Google Gemini API (@google/generative-ai)
+-   **Processing**: Multimodal PDF processing (Gemini), `xlsx` (Excel generation)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is ready for deployment on Vercel.
+1.  Push to GitHub.
+2.  Import project in Vercel.
+3.  (Optional) Set `OPENAI_API_KEY` env var if you want to provide a default key, otherwise users must enter their own.
